@@ -1,0 +1,132 @@
+@import "colors";
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  background-color: $main-background-color;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: "Outfit";
+}
+main {
+  height: 600px;
+  width: 350px;
+  background-color: $card-background-color;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 2px 5px 15px hsl(216, 51%, 15%, 0.1),
+    -2px 5px 15px hsl(217, 49%, 12%, 0.1);
+  .div-img {
+    width: 300px;
+    position: relative;
+    margin-bottom: 25px;
+    .hover-overlay {
+      z-index: 2;
+      display: none;
+      height: 300px;
+      min-width: 100%;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      background: $hover-color-transparent;
+      border-radius: 10px;
+    }
+
+    .cube-img {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 10px;
+      &:hover + .hover-overlay {
+        display: block;
+      }
+      &:hover ~ #eye-icon {
+        display: inline-block;
+      }
+    }
+
+    #eye-icon {
+      position: absolute;
+      z-index: 500;
+      top: 50%;
+      right: 50%;
+      display: none;
+      transform: translate(50%, -50%);
+    }
+  }
+  h1 {
+    color: $white;
+    font-weight: 700;
+    font-size: 25px;
+    &:hover {
+      color: $hover-cyan-color;
+      cursor: pointer;
+    }
+    margin-bottom: 20px;
+  }
+
+  .desc {
+    color: $text-blue-color;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    div {
+      &:first-child span {
+        color: $hover-cyan-color;
+      }
+      &:nth-child(2) span {
+        color: $text-blue-color;
+      }
+    }
+    margin-bottom: 20px;
+  }
+  hr {
+    background: hsl(215, 32%, 27%);
+    display: inline-block;
+    border: 0;
+    height: 1px;
+    margin-bottom: 20px;
+  }
+  .creator {
+    display: flex;
+    img {
+      border: 1px solid $white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      margin-right: 20px;
+    }
+
+    p {
+      color: $text-blue-color;
+      span {
+        color: $white;
+        &:hover {
+          color: $hover-cyan-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

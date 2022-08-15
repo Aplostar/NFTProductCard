@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  background-color: hsl(217deg, 54%, 11%);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: "Outfit";
+}
+
+main {
+  height: 600px;
+  width: 350px;
+  background-color: hsl(216deg, 50%, 16%);
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 2px 5px 15px hsla(216deg, 51%, 15%, 0.1), -2px 5px 15px hsla(217deg, 49%, 12%, 0.1);
+}
+main .div-img {
+  width: 300px;
+  position: relative;
+  margin-bottom: 25px;
+}
+main .div-img .hover-overlay {
+  z-index: 2;
+  display: none;
+  height: 300px;
+  min-width: 100%;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  background: rgba(0, 255, 247, 0.5);
+  border-radius: 10px;
+}
+main .div-img .cube-img {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 10px;
+}
+main .div-img .cube-img:hover + .hover-overlay {
+  display: block;
+}
+main .div-img .cube-img:hover ~ #eye-icon {
+  display: inline-block;
+}
+main .div-img #eye-icon {
+  position: absolute;
+  z-index: 500;
+  top: 50%;
+  right: 50%;
+  display: none;
+  transform: translate(50%, -50%);
+}
+main h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+main h1:hover {
+  color: hsl(178deg, 100%, 50%);
+  cursor: pointer;
+}
+main .desc {
+  color: hsl(215deg, 51%, 70%);
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+main .price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+main .price div:first-child span {
+  color: hsl(178deg, 100%, 50%);
+}
+main .price div:nth-child(2) span {
+  color: hsl(215deg, 51%, 70%);
+}
+main hr {
+  background: hsl(215deg, 32%, 27%);
+  display: inline-block;
+  border: 0;
+  height: 1px;
+  margin-bottom: 20px;
+}
+main .creator {
+  display: flex;
+}
+main .creator img {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+main .creator p {
+  color: hsl(215deg, 51%, 70%);
+}
+main .creator p span {
+  color: white;
+}
+main .creator p span:hover {
+  color: hsl(178deg, 100%, 50%);
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
